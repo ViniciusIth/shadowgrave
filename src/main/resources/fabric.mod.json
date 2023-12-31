@@ -18,7 +18,7 @@
       "cloud.viniciusith.shadowgrave.client.ShadowGraveClient"
     ],
     "main": [
-      "cloud.viniciusith.shadowgrave.ShadowGrave"
+      "cloud.viniciusith.shadowgrave.ShadowGraveMod"
     ]
   },
   "mixins": [
