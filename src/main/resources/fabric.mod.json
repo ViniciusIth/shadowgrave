@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "shadowgrave",
+  "version": "${version}",
+  "name": "Shadow Grave",
+  "description": "A grave mod inspired by hollow knight",
+  "authors": [
+    "viniciusith"
+  ],
+  "contact": {
+    "repo": "https://github.com/viniciusith/shadowgrave"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/shadowgrave/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "cloud.viniciusith.shadowgrave.client.ShadowGraveClient"
+    ],
+    "main": [
+      "cloud.viniciusith.shadowgrave.ShadowGrave"
+    ]
+  },
+  "mixins": [
+    "shadowgrave.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
