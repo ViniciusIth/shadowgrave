@@ -1,6 +1,7 @@
 package cloud.viniciusith.shadowgrave.mixin;
 
 import cloud.viniciusith.shadowgrave.ShadowGraveMod;
+import cloud.viniciusith.shadowgrave.other.GraveUtils;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -16,11 +17,8 @@ public class LivingEntityMixin {
             shift = At.Shift.BEFORE))
     private void shadowgrave$replaceWithShadow(DamageSource source, CallbackInfo ci) {
         if (((Object) this) instanceof ServerPlayerEntity player) {
-            try {
-                // Spawn entity
-            } catch (Exception e) {
-                ShadowGraveMod.LOGGER.severe(e.getMessage());
-            }
+            ShadowGraveMod.LOGGER.info("Shadow grave dropped by player " + player.getGameProfile().getName());
+            GraveUtils.spawnShadow(player, player.getPos(), source);
         }
     }
 }
