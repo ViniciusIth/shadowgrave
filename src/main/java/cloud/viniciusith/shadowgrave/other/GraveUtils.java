@@ -18,9 +18,19 @@ public class GraveUtils {
 
         shadow.setShadowOwner(serverPlayer.getGameProfile());
         shadow.setXp(serverPlayer.totalExperience);
-        shadow.setItems(serverPlayer.getInventory().main);
+        shadow.setInventories(
+                serverPlayer.getInventory().main,
+                serverPlayer.getInventory().armor,
+                serverPlayer.getInventory().offHand
+        );
 
-        shadow.refreshPositionAndAngles(deathPos.x, deathPos.y, deathPos.z, serverPlayer.getYaw(), serverPlayer.getPitch());
+        shadow.refreshPositionAndAngles(
+                deathPos.x,
+                deathPos.y,
+                deathPos.z,
+                serverPlayer.getYaw(),
+                serverPlayer.getPitch()
+        );
 
         world.spawnEntity(shadow);
     }
