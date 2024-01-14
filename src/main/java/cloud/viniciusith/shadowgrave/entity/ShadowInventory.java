@@ -73,6 +73,17 @@ public class ShadowInventory implements Inventory {
             this.main.set(i, ItemStack.EMPTY);
             this.dropStack(itemStack);
         }
+        for (int i = 0; i < this.armor.size(); i++) {
+            ItemStack itemStack = this.armor.get(i);
+            if (itemStack.isEmpty()) {
+                continue;
+            }
+            this.armor.set(i, ItemStack.EMPTY);
+            this.dropStack(itemStack);
+        }
+
+        dropStack(this.offHand.get(0));
+        this.offHand.set(0, ItemStack.EMPTY);
     }
 
     private void dropStack(ItemStack stack) {
